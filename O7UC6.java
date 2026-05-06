@@ -44,30 +44,28 @@ public class O7UC6 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-
-        initializeBoard();
-
-        displayBoard();
-
-        System.out.print("Enter row: ");
-        int row = sc.nextInt();
-
-        System.out.print("Enter column: ");
-        int col = sc.nextInt();
-
-        if (placeMove(row, col, 'X')) {
-
-            System.out.println("Move placed successfully");
+        try (Scanner sc = new Scanner(System.in)) {
+            initializeBoard();
+            
+            displayBoard();
+            
+            System.out.print("Enter row: ");
+            int row = sc.nextInt();
+            
+            System.out.print("Enter column: ");
+            int col = sc.nextInt();
+            
+            if (placeMove(row, col, 'X')) {
+                
+                System.out.println("Move placed successfully");
+            }
+            
+            else {
+                
+                System.out.println("Invalid move");
+            }
+            
+            displayBoard();
         }
-
-        else {
-
-            System.out.println("Invalid move");
-        }
-
-        displayBoard();
-
-        sc.close();
     }
 }
